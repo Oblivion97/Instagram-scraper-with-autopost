@@ -1,2 +1,2 @@
+instabot
 instagram-scraper
-instapy-cli
