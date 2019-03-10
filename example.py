@@ -18,6 +18,7 @@ from tqdm import tqdm
 import instagram_scraper as insta
 
 insta_profiles = ['billgates', 'elonmusk', 'joerogan']
+
 number_last_photos = 3
 x = 0
 
@@ -98,16 +99,17 @@ elif args.file:
     users = utils.file(args.file).list
 
 while x < len(insta_profiles):
+    imgScraper = insta.InstagramScraper(usernames=[insta_profiles[x]], maximum=number_last_photos, media_metadata=True, latest=True,media_types=['image'])
+    imgScraper.scrape()
+    print("image scraping is runninf or not")
     with open(insta_profiles[x] + '/' + insta_profiles[x] + '.json', 'r') as j:
         json_data = json.load(j)
         newstr = (json_data[0]["display_url"])
         imgUrl = newstr.split('?')[0].split('/')[-1]
         instapath = insta_profiles[x] + '/' + imgUrl
         print(instapath)
-
-    imgScraper = insta.InstagramScraper(usernames=[insta_profiles[x]], maximum=number_last_photos, media_metadata=True, latest=True,media_types=['image'])
-    imgScraper.scrape()
+   
     repost_best_photos(bot, users, args.amount)
     x += 1
-    time.sleep(4)
+    time.sleep(30)
 
