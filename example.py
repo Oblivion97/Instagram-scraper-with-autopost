@@ -17,13 +17,28 @@ from tqdm import tqdm
 
 import instagram_scraper as insta
 
-insta_profiles = ['billgates', 'elonmusk', 'joerogan']
+insta_profiles = [
+'billgates',
+'joerogan'
+]
+
+userdb = '\n'.join(insta_profiles)+'\n'
+
+file = open("userdb.txt","w")
+file.write(userdb)
+file.close()
+
+file = open("username_database.txt","w")
+file.write("maskofshiva")
+file.close()
+
 
 number_last_photos = 3
 x = 0
 
 sys.path.append(os.path.join(sys.path[0], '../'))
 from instabot import Bot, utils
+
 
 USERNAME_DATABASE = 'username_database.txt'
 POSTED_MEDIAS = 'posted_medias.txt'
@@ -66,16 +81,7 @@ def update_posted_medias(new_media_id, path=POSTED_MEDIAS):
 
 
 def repost_photo(bot, new_media_id, path=POSTED_MEDIAS):
-    if exists_in_posted_medias(new_media_id, path):
-        bot.logger.warning("Media {0} was uploaded earlier".format(new_media_id))
-        return False
-    photo_path = bot.download_photo(new_media_id, save_description=True)
-    if not photo_path or not isinstance(photo_path, str):
-        # photo_path could be True, False, or a file path.
-        return False
-    with open(photo_path[:-3] + 'txt', 'r') as f:
-        text = ''.join(f.readlines())
-    if bot.upload_photo(instapath, text):
+    if bot.upload_photo(instapath, "#model #models #Modeling #modelo #modellife #modelling #modelagency #Modelos #modelphotography #modelsearch #ModelStatus #modelingagency #modelfitness #ModelsWanted #modelshoot #modella #modelmanagement #modelscout #modeltest #modelindonesia #modele #modelife #modelmayhem #modelgirl #modell #modelslife #modelkids #modelcall #modelpose #ModelBehavior"):
         update_posted_medias(new_media_id, path)
         bot.logger.info('Media_id {0} is saved in {1}'.format(new_media_id, path))
 
@@ -101,15 +107,17 @@ elif args.file:
 while x < len(insta_profiles):
     imgScraper = insta.InstagramScraper(usernames=[insta_profiles[x]], maximum=number_last_photos, media_metadata=True, latest=True,media_types=['image'])
     imgScraper.scrape()
-    print("image scraping is runninf or not")
-    with open(insta_profiles[x] + '/' + insta_profiles[x] + '.json', 'r') as j:
-        json_data = json.load(j)
-        newstr = (json_data[0]["display_url"])
-        imgUrl = newstr.split('?')[0].split('/')[-1]
-        instapath = insta_profiles[x] + '/' + imgUrl
-        print(instapath)
-   
-    repost_best_photos(bot, users, args.amount)
-    x += 1
-    time.sleep(30)
+    print("image scraping is running or not")
 
+    try:
+        with open(insta_profiles[x] + '/' + insta_profiles[x] + '.json', 'r') as j:
+            json_data = json.load(j)
+            newstr = (json_data[0]["display_url"])
+            imgUrl = newstr.split('?')[0].split('/')[-1]
+            instapath = insta_profiles[x] + '/' + imgUrl
+            print(instapath)
+        repost_best_photos(bot, users, args.amount)
+        time.sleep(600)
+    except:
+        print("User is set to Private scraping next user")
+    x += 1
