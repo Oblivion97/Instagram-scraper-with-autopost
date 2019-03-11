@@ -1,3 +1,7 @@
+DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBIUTION AND MODIFICATION.
+
+0. You just do WHAT THE FUCK YOU WANT TO.
+
 # Instagram-scraper-with-autopost
 
 Script now saves user session and and have CLI session. 
