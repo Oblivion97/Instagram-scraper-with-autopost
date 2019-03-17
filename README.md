@@ -18,4 +18,6 @@ cd Instagram-scraper-with-autopost
 
 sudo pip install -r requirements.txt
 
+Change line 30 to your instagram username
+
 Run: python example.py
