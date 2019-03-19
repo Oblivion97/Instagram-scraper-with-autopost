@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 """
     Instagram Scraper with autoposter
     Intro:
@@ -29,12 +30,13 @@ import instagram_scraper as insta
 # Instagram Info
 InstaUsername = "yourusername"
 
+
 # Profiles to scrape and repost
 insta_profiles = [
-'maskofshiva',
 'siliconeheaven',
-'joerogan',
-'elonmusk'
+'billgates',
+'elonmusk',
+'joerogan'
 ]
 
 
@@ -96,8 +98,6 @@ def update_posted_medias(new_media_id, path=POSTED_MEDIAS):
     medias.append(str(new_media_id))
     return True
 
-tags = f'''@{insta_profiles[x]} ##Model #Modeling #modelo #modellife #modelling #modelagency #Modelos #modelphotography #modelsearch #ModelStatus #modelingagency #modelfitness #ModelsWanted #modelshoot #modella #modelmanagement #modelscout #modeltest #modelindonesia #modele #modelife #modelmayhem #modelgirl #modell #modelslife #modelkids #modelcall #modelpose #ModelBehaviors'''
-
 def repost_photo(bot, new_media_id, path=POSTED_MEDIAS):
     if bot.upload_photo(instapath, tags):
         update_posted_medias(new_media_id, path)
@@ -115,14 +115,18 @@ args = parser.parse_args()
 
 
 # Start the bot
+
+def InstaImageScraper():
+    imgScraper = insta.InstagramScraper(usernames=[insta_profiles[x]], maximum=number_last_photos, media_metadata=True, latest=True, media_types=['image'])
+    imgScraper.scrape()
+    print("image scraping is running or not")
+ 
 # While x is less than instaprofiles loop this
 def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
-
+    InstaImageScraper()
     global x
     while x < len(insta_profiles):
-        imgScraper = insta.InstagramScraper(usernames=[insta_profiles[x]], maximum=number_last_photos, media_metadata=True, latest=True, media_types=['image'])
-        imgScraper.scrape()
-        print("image scraping is running or not")
+        
         try:
             # Open insta_profiles[x] and it's scraped json file at take first image location
             with open(insta_profiles[x] + '/' + insta_profiles[x] + '.json', 'r') as j:
@@ -131,6 +135,10 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
                 imgUrl = newstr.split('?')[0].split('/')[-1]
                 global instapath
                 instapath = insta_profiles[x] + '/' + imgUrl
+                global tags
+                # If image have been posted goto next picture
+                print(imgUrl)
+                tags = f'''@{insta_profiles[x]} ##Model #Modeling #modelo #modellife #modelling #modelagency #Modelos #modelphotography #modelsearch #ModelStatus #modelingagency #modelfitness #ModelsWanted #modelshoot #modella #modelmanagement #modelscout #modeltest #modelindonesia #modele #modelife #modelmayhem #modelgirl #modell #modelslife #modelkids #modelcall #modelpose #ModelBehaviors'''
                 # Locate Face On image scraped
                 image = face_recognition.load_image_file(instapath)
                 face_locations = face_recognition.face_locations(image)
@@ -163,6 +171,53 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
                     print("Date - Time - Followers - Following - Posts")
                     print(last_line)
                     f.close
+                # Append username info to csv file
+                try:
+                    f=open(f"{username}_posted.tsv", "a+")
+                    f.write(str(imgUrl + "\n"))
+                    f.close
+                    f=open(f"{username}_posted.tsv", "r")
+                    last_line = f.readlines()[-1]
+                    f=open(f"{username}_posted.tsv", "r")
+                    all_lines = f.readlines()[0:-2]
+                    print("Posted media")
+                    print(last_line)
+                    print("all posted medias")
+                    print(all_lines)
+                    all_lines = (str(all_lines))
+                    f.close
+                    if str(imgUrl) in str(all_lines):
+                        try:
+                            print("Image found in database scraping next profile")
+                            x += 1
+                            time.sleep(5)
+                            print("This is a test!!!!!!!!!")
+                            instascraper()
+                        except:
+                            print("hello")
+                            time.sleep(5)
+                            instascraper(bot, new_media_id, path=POSTED_MEDIAS)
+ 
+               # Write username tsv file if it does not exist
+                except:
+                    f=open(f"{username}_posted.tsv", "a+")
+                    f.write(str(imgUrl + "\n"))
+                    f.close
+                    f=open(f"{username}_posted.tsv", "r")
+                    last_line = str(f.readlines()[-1])
+                    all_lines = str(f.readlines()[0:-2])
+                    print("Posted media")
+                    print(last_line)
+                    print("All Posted Medias")
+                    print(all_lines)
+                    f.close
+                    if imgUrl in all_lines:
+                  #      try:
+                        print("Image found in database scraping next profile")
+                        x += 1
+                        time.sleep(5)
+                        instascraper()
+
             time.sleep(2)
             time.sleep(2)
             repost_best_photos(bot, users, args.amount)
@@ -172,7 +227,6 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
         except:
             print("User is set to Private scraping next user")
         x += 1
-# Twitter executed code
 
 
 time.sleep(5)
