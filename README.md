@@ -11,7 +11,10 @@ Script now saves user session and and have CLI session.
 I also integrated it with instabot api.
 90% of it are junk code I will fix it later.
 
-This script scrapes images from users and then repost them under your Instagram accounts with your own tags. 
+This script scrapes images from users and then repost them under your Instagram accounts with your own tags.
+
+Demo:
+https://www.instagram.com/siliconeheaven/
 
 To install script:
 
