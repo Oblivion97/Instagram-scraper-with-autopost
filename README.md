@@ -27,3 +27,8 @@ sudo pip install -r requirements.txt
 Change line 30 to your instagram username
 
 Run: python example.py
+
+## Troubleshoot
+If you are getting Illegal Instruction with face_recognition follow this guide:
+https://github.com/ageitgey/face_recognition/issues/11#issuecomment-475482716
+
