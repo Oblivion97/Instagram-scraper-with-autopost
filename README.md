@@ -7,6 +7,8 @@ DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DI
 Instagram scraper which scrapes peoples images use machine learning to recognise a face, if face
 is detected it will repost that photo.
 
+![image](https://res.cloudinary.com/practicaldev/image/fetch/s--qdvR8Vl8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://cloud.githubusercontent.com/assets/896692/24430398/36f0e3f0-13cb-11e7-8258-4d0c9ce1e419.gif)
+
 Script now saves user session and and have CLI session. 
 I also integrated it with instabot api.
 90% of it are junk code I will fix it later.
