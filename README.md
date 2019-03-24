@@ -1,7 +1,3 @@
-DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBIUTION AND MODIFICATION.
-
-0. You just do WHAT THE FUCK YOU WANT TO.
-
 # Instagram-scraper-with-autopost
 
 Instagram scraper which scrapes peoples images use machine learning to recognise a face, if face
@@ -37,3 +33,6 @@ Run: python example.py
 If you are getting Illegal Instruction with face_recognition follow this guide:
 https://github.com/ageitgey/face_recognition/issues/11#issuecomment-475482716
 
+DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBIUTION AND MODIFICATION.
+
+0. You just do WHAT THE FUCK YOU WANT TO.
