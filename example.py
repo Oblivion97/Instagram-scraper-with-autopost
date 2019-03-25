@@ -5,7 +5,7 @@
     This bot autoscrape users from variable insta_profiles
     and repost them to your instagram, it also save your
     cookie,session and user stats.
-    
+
     Github:
     https://github.com/reliefs/Instagram-scraper-with-autopost
 
@@ -15,17 +15,16 @@
     The file should contain one username per line!
 """
 import face_recognition
-import random
 import argparse
 import os
 import sys
 import json
 import time
-import csv
 
 from tqdm import tqdm
 
 import instagram_scraper as insta
+from instabot import Bot, utils
 
 # Instagram Info
 InstaUsername = "yourusername"
@@ -40,14 +39,14 @@ insta_profiles = [
 ]
 
 
-#Output userenames in a txt file
+# Output userenames in a txt file
 userdb = '\n'.join(insta_profiles)+'\n'
 
-file = open("userdb.txt","w")
+file = open("userdb.txt", "w")
 file.write(userdb)
 file.close()
 
-file = open("username_database.txt","w")
+file = open("username_database.txt", "w")
 file.write(InstaUsername)
 file.close()
 
@@ -56,7 +55,6 @@ number_last_photos = 1
 x = 0
 
 sys.path.append(os.path.join(sys.path[0], '../'))
-from instabot import Bot, utils
 
 
 USERNAME_DATABASE = 'username_database.txt'
@@ -120,13 +118,13 @@ def InstaImageScraper():
     imgScraper = insta.InstagramScraper(usernames=[insta_profiles[x]], maximum=number_last_photos, media_metadata=True, latest=True, media_types=['image'])
     imgScraper.scrape()
     print("image scraping is running or not")
- 
+
 # While x is less than instaprofiles loop this
 def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
     InstaImageScraper()
     global x
     while x < len(insta_profiles):
-        
+
         try:
             # Open insta_profiles[x] and it's scraped json file at take first image location
             with open(insta_profiles[x] + '/' + insta_profiles[x] + '.json', 'r') as j:
@@ -197,7 +195,7 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
                             print("hello")
                             time.sleep(5)
                             instascraper(bot, new_media_id, path=POSTED_MEDIAS)
- 
+
                # Write username tsv file if it does not exist
                 except:
                     f=open(f"{username}_posted.tsv", "a+")
@@ -223,11 +221,12 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
             repost_best_photos(bot, users, args.amount)
             print("Posting Instagram")
             os.remove("posted_medias.txt")
-            time.sleep(900)
+            time.sleep(1300)
         except:
             print("User is set to Private scraping next user")
         x += 1
-
+    x = 0
+    instascraper()
 
 time.sleep(5)
 bot = Bot()
