@@ -23,11 +23,11 @@ git clone https://github.com/reliefs/Instagram-scraper-with-autopost.git
 cd Instagram-scraper-with-autopost
 
 sudo pip install -r requirements.txt
-```
 
 Change line 30 to your instagram username
 
 Run: python example.py
+```
 
 ## Troubleshoot
 If you are getting Illegal Instruction with face_recognition follow this guide:
