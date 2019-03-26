@@ -1,4 +1,4 @@
-![image](https://raw.githubusercontent.com/reliefs/Instagram-scraper-with-autopost/master/banner.png)
+![image](https://raw.githubusercontent.com/reliefs/Instagram-scraper-with-autopost/master/img/banner.png)
 
 Instagram scraper which scrapes peoples images use machine learning to recognise a face, if face
 is detected it will repost that photo.
