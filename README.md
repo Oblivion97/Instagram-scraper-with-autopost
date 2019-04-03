@@ -17,7 +17,14 @@ Demo:
 https://www.instagram.com/siliconeheaven/
 
 ## To install script:
+
 ```
+Ubuntu:
+sudo apt install cmake
+
+Arch Linux_
+sudo pacman -S cmake
+
 git clone https://github.com/reliefs/Instagram-scraper-with-autopost.git
 
 cd Instagram-scraper-with-autopost
