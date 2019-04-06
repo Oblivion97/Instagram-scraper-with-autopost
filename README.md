@@ -31,7 +31,7 @@ cd Instagram-scraper-with-autopost
 
 sudo pip install -r requirements.txt
 
-Change line 30 to your instagram username
+change instaprofiles.txt to the instagram profiles you wanna scrape
 
 Run: python example.py
 ```
