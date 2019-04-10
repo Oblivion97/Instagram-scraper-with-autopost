@@ -28,7 +28,7 @@ from instabot import Bot, utils
 
 
 # Instagram Info
-InstaUsername = "siliconeheaven"
+InstaUsername = "yourusername"
 
 
 # Open Userdb and put them into a list also write your username to database
