@@ -15,11 +15,13 @@
     The file should contain one username per line!
 """
 import face_recognition
+import random
 import argparse
 import os
 import sys
 import json
 import time
+import csv
 from tqdm import tqdm
 import instagram_scraper as insta
 from instabot import Bot, utils
@@ -163,10 +165,16 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
                 global scraped_user
                 scraped_user = insta_profiles[x]
                 json_data = json.load(j)
-                newstr = (json_data[0]["display_url"])
+                print(json_data)
+                time.sleep(5)
+                newstr = (json_data["GraphImages"][0]["display_url"])
+                print(newstr)
+                time.sleep(5)
                 imgUrl = newstr.split('?')[0].split('/')[-1]
                 global instapath
                 instapath = insta_profiles[x] + '/' + imgUrl
+                print(instapath)
+                time.sleep(5)
                 global tags
                 # If image have been posted goto next picture
                 print(imgUrl)
