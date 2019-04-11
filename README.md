@@ -20,8 +20,52 @@ This script scrapes images from users and then repost them under your Instagram 
 Demo:
 https://www.instagram.com/siliconeheaven/
 
-## To install script:
+## To install script on Windows:
 
+## Install Cmake 
+download link : https://github.com/Kitware/CMake/releases/download/v3.14.1/cmake-3.14.1.zip
+
+## Install Dblib
+Download dlip ‘.wheel’ file as ur system requirnment (use link bellow)
+download link : https://pypi.python.org/simple/dlib/
+
+```
+Open cmd navigate to dlib wheel file path and hit command
+pip install dlib_file_name.wheel
+```
+
+## Then run
+
+``` bash
+git clone https://github.com/instagrambot/Instagram-scraper-with-autopost --recursive
+```
+
+```
+cd Instagram-scraper-with-autopost
+```
+
+```
+pip install -r requirements.txt
+```
+
+```
+change yourusername to your instagram username in file example.py line 29: InstaUsername = "yourusername"
+```
+
+```
+change instaprofiles.txt to the instagram profiles you wanna scrape
+```
+
+```
+Run: python example.py -u yourusername
+```
+
+```
+And press Enter.
+## To install script on Linux:
+
+```
+## To install script on Linux:
 ```
 Ubuntu:
 sudo apt install cmake
@@ -29,13 +73,15 @@ sudo apt install cmake
 Arch Linux:
 sudo pacman -S cmake
 ```
+
 First, make sure you have dlib already installed with Python bindings:
 
   * [How to install dlib from source on macOS or Ubuntu](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf)
   
-```
-Then do
 
+## Then do
+
+```
 git clone https://github.com/reliefs/Instagram-scraper-with-autopost.git
 
 cd Instagram-scraper-with-autopost
