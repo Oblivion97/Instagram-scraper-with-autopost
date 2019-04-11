@@ -52,7 +52,7 @@ def open_profiles():
     with open('username_database.txt', 'w') as f:
         f.write(InstaUsername)
 
-number_last_photos = 1
+number_last_photos = 3
 x = 0
 
 sys.path.append(os.path.join(sys.path[0], '../'))
@@ -131,25 +131,6 @@ def InstaImageScraper():
 
 
 # Face recognition if face not detected scrape next profile
-def recognize_face():
-    # Locate Face On image scraped
-    image = face_recognition.load_image_file(instapath)
-    face_locations = face_recognition.face_locations(image)
-    # If no face located scrape the next profile
-    if not face_locations:
-        print("There is no Face Detected scraping next profile")
-        global x
-        x += 1
-        print(scraped_user)
-        time.sleep(5)
-        instascraper()
-    else:
-        print("There is a Face Detected scraping and posting this image")
-        print(scraped_user)
-        time.sleep(5)
-    print(face_locations)
-    print(instapath)
-
 
 # Instagram manipulate image and repost them
 # While x is less than instaprofiles loop this
@@ -187,7 +168,24 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
                 #modelcall #modelpose #ModelBehaviors'''
 
                 # Execute Face recognition
-                recognize_face()
+                # Locate Face On image scraped
+                image = face_recognition.load_image_file(instapath)
+                face_locations = face_recognition.face_locations(image)
+                # If no face located scrape the next profile
+                if not face_locations:
+                    print("There is no Face Detected scraping next profile")
+                    x += 1
+                    print(scraped_user)
+                    time.sleep(5)
+                    instascraper(bot, new_media_id, path=POSTED_MEDIAS)
+                else:
+                    print("There is a Face Detected scraping and posting this image")
+                    print(scraped_user)
+                    time.sleep(5)
+                print(face_locations)
+                print(instapath)
+
+
                 # Append username info to csv file
                 try:
                     with open(f'{username}.tsv', 'a+') as f:
@@ -252,7 +250,7 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
                         x += 1
                         print("image of ", scraped_user)
                         time.sleep(5)
-                        instascraper()
+                        instascraper(bot, new_media_id, path=POSTED_MEDIAS)
 
             # Execute the repost function
             time.sleep(4)
@@ -268,7 +266,7 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
 
         x += 1
     x = 0
-    instascraper()
+    instascraper(bot, new_media_id, path=POSTED_MEDIAS)
 
 
 # All main stuff gets executed
