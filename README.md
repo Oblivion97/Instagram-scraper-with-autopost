@@ -28,10 +28,13 @@ sudo apt install cmake
 
 Arch Linux:
 sudo pacman -S cmake
-
+```
 First, make sure you have dlib already installed with Python bindings:
 
   * [How to install dlib from source on macOS or Ubuntu](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf)
+  
+```
+Then do
 
 git clone https://github.com/reliefs/Instagram-scraper-with-autopost.git
 
