@@ -67,6 +67,7 @@ And press Enter.
 ```
 Ubuntu:
 apt-get install python-dev python3-dev
+sudo apt install g++
 sudo apt install cmake
 
 Arch Linux:
