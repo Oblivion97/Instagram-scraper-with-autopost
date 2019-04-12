@@ -69,10 +69,12 @@ Ubuntu:
 apt-get install python-dev python3-dev
 sudo apt install g++
 sudo apt install cmake
+sudo apt install python3-pip
 
 Arch Linux:
 sudo pacman -S python3-dev
 sudo pacman -S cmake
+sudo pacman -S python3-pip
 ```
 
 First, make sure you have dlib already installed with Python bindings:
