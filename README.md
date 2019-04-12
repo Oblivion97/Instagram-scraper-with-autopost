@@ -67,7 +67,7 @@ And press Enter.
 ```
 ## To install script on Linux:
 ```
-UBuntu:
+Ubuntu:
 apt-get install python-dev python3-dev
 
 Arch Linux:
