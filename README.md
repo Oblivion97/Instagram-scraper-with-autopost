@@ -60,11 +60,9 @@ change instaprofiles.txt to the instagram profiles you wanna scrape
 Run: python example.py -u yourusername
 ```
 
-```
 And press Enter.
-## To install script on Linux:
 
-```
+
 ## To install script on Linux:
 ```
 Ubuntu:
@@ -74,7 +72,6 @@ sudo apt install cmake
 Arch Linux:
 sudo pacman -S python3-dev
 sudo pacman -S cmake
-
 ```
 
 First, make sure you have dlib already installed with Python bindings:
