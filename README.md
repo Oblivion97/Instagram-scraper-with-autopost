@@ -95,7 +95,7 @@ change yourusername to your instagram username in file example.py line 29: Insta
 
 change instaprofiles.txt to the instagram profiles you wanna scrape
 
-Run: python example.py
+Run: python3 example.py
 ```
 
 ## Troubleshoot
