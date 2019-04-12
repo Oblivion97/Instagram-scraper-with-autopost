@@ -136,6 +136,7 @@ def InstaImageScraper():
 # While x is less than instaprofiles loop this
 def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
     InstaImageScraper()
+    time.sleep(50)
     global x
     while x < len(insta_profiles):
         try:
@@ -147,15 +148,15 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
                 scraped_user = insta_profiles[x]
                 json_data = json.load(j)
                 print(json_data)
-                time.sleep(5)
+                time.sleep(20)
                 newstr = (json_data["GraphImages"][0]["display_url"])
                 print(newstr)
-                time.sleep(5)
+                time.sleep(15)
                 imgUrl = newstr.split('?')[0].split('/')[-1]
                 global instapath
                 instapath = insta_profiles[x] + '/' + imgUrl
                 print(instapath)
-                time.sleep(5)
+                time.sleep(15)
                 global tags
                 # If image have been posted goto next picture
                 print(imgUrl)
@@ -253,7 +254,7 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
                         instascraper(bot, new_media_id, path=POSTED_MEDIAS)
 
             # Execute the repost function
-            time.sleep(4)
+            time.sleep(10)
             repost_best_photos(bot, users, args.amount)
             print("Posting Instagram")
             os.remove("posted_medias.txt")
@@ -266,6 +267,7 @@ def instascraper(bot, new_media_id, path=POSTED_MEDIAS):
 
         x += 1
     x = 0
+    time.sleep(5)
     instascraper(bot, new_media_id, path=POSTED_MEDIAS)
 
 
@@ -274,6 +276,7 @@ open_profiles()
 time.sleep(5)
 bot = Bot()
 bot.login(username=InstaUsername)
+time.sleep(10)
 user_id = bot.get_user_id_from_username(InstaUsername)
 username = bot.get_username_from_user_id(user_id)
 #print(f"Welcome {username} your userid is {user_id}")
