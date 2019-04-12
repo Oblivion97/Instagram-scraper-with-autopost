@@ -19,6 +19,8 @@ This script scrapes images from users and then repost them under your Instagram 
 
 Demo:
 https://www.instagram.com/siliconeheaven/
+## Requirements
+Python 3.6+
 
 ## To install script on Windows:
 
