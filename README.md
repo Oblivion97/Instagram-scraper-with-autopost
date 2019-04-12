@@ -22,10 +22,10 @@ https://www.instagram.com/siliconeheaven/
 
 ## To install script on Windows:
 
-## Install Cmake 
+### Install Cmake 
 download link : https://github.com/Kitware/CMake/releases/download/v3.14.1/cmake-3.14.1.zip
 
-## Install Dblib
+### Install Dblib
 Download dlip ‘.wheel’ file as ur system requirnment (use link bellow)
 download link : https://pypi.python.org/simple/dlib/
 
@@ -34,7 +34,7 @@ Open cmd navigate to dlib wheel file path and hit command
 pip install dlib_file_name.wheel
 ```
 
-## Then run
+### Then run
 
 ``` bash
 git clone https://github.com/instagrambot/Instagram-scraper-with-autopost --recursive
@@ -69,15 +69,12 @@ And press Enter.
 ```
 Ubuntu:
 apt-get install python-dev python3-dev
-
-Arch Linux:
-sudo pacman -S python3-dev
-
-Ubuntu:
 sudo apt install cmake
 
 Arch Linux:
+sudo pacman -S python3-dev
 sudo pacman -S cmake
+
 ```
 
 First, make sure you have dlib already installed with Python bindings:
@@ -85,7 +82,7 @@ First, make sure you have dlib already installed with Python bindings:
   * [How to install dlib from source on macOS or Ubuntu](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf)
   
 
-## Then do
+### Then do
 
 ```
 git clone https://github.com/reliefs/Instagram-scraper-with-autopost.git
