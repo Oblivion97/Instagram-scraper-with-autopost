@@ -127,7 +127,7 @@ def InstaImageScraper():
                                         media_metadata=True, latest=True,
                                         media_types=['image'])
     imgScraper.scrape()
-    print("image scraping is running or not")
+    print("image scraping is running, please wait.")
 
 
 # Face recognition if face not detected scrape next profile
