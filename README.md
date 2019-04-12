@@ -67,6 +67,12 @@ And press Enter.
 ```
 ## To install script on Linux:
 ```
+UBuntu:
+apt-get install python-dev python3-dev
+
+Arch Linux:
+sudo pacman -S python3-dev
+
 Ubuntu:
 sudo apt install cmake
 
