@@ -34,6 +34,8 @@ Create a file called secret.txt inside that folder with the following info:
 yourusername:yourpassword
 Save it
 
+change yourusername to your instagram username in file example.py line 31: InstaUsername = "yourusername"
+
 Docker build .
 
 Docker run [imageid]
@@ -68,7 +70,7 @@ pip install -r requirements.txt
 ```
 
 ```
-change yourusername to your instagram username in file example.py line 29: InstaUsername = "yourusername"
+change yourusername to your instagram username in file example.py line 31: InstaUsername = "yourusername"
 ```
 
 ```
@@ -110,7 +112,7 @@ cd Instagram-scraper-with-autopost
 
 sudo pip install -r requirements.txt
 
-change yourusername to your instagram username in file example.py line 29: InstaUsername = "yourusername"
+change yourusername to your instagram username in file example.py line 31: InstaUsername = "yourusername"
 
 change instaprofiles.txt to the instagram profiles you wanna scrape
 
