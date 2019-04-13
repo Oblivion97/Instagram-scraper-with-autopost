@@ -24,6 +24,21 @@ Python 3.6+
 
 The script does not work with new accounts. If you know how to fix, send me a message. 
 
+## To install script with Docker:
+```
+git clone https://github.com/reliefs/Instagram-scraper-with-autopost.git
+
+cd Instagram-scraper-with-autopost
+
+Create a file called secret.txt inside that folder with the following info:
+yourusername:yourpassword
+Save it
+
+Docker build .
+
+Docker run [imageid]
+```
+
 ## To install script on Windows:
 
 ### Install Cmake 
