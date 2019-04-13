@@ -21,6 +21,7 @@ Demo:
 https://www.instagram.com/siliconeheaven/
 ## Requirements
 Python 3.6+
+
 The script does not work with new accounts. If you know how to fix, send me a message. 
 
 ## To install script on Windows:
