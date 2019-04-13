@@ -104,6 +104,10 @@ Run: python3 example.py
 If you are getting Illegal Instruction with face_recognition follow this guide:
 https://github.com/ageitgey/face_recognition/issues/11#issuecomment-475482716
 
+AttributeError: 'module' object has no attribute 'face_recognition_model_v1'
+
+Solution: The version of dlib you have installed is too old. You need version 19.7 or newer. Upgrade dlib.
+
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBIUTION AND MODIFICATION.
 
 0. You just do WHAT THE FUCK YOU WANT TO.
