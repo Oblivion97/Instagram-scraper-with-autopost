@@ -1,0 +1,5 @@
+# File with login and password
+secret.txt
+
+# Files with downloaded data
+*.tsv
