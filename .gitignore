@@ -3,3 +3,8 @@ secret.txt
 
 # Files with downloaded data
 *.tsv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
