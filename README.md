@@ -21,6 +21,7 @@ Demo:
 https://www.instagram.com/siliconeheaven/
 ## Requirements
 Python 3.6+
+Min 10-20 profiles inside instaprofiles.txt
 
 The script does not work with new accounts. If you know how to fix, send me a message. 
 
