@@ -1,5 +1,5 @@
 ![image](https://raw.githubusercontent.com/reliefs/Instagram-scraper-with-autopost/master/img/banner.png)
-
+[![Telegram Chat](https://img.shields.io/badge/chat%20on-Telegram-blue.svg)](https://t.me/instabotproject)
 ---
 ### [Website](https://instascraper.github.io/) | [Read the Docs](https://instascraper.github.io/docs/) | [Contribute](https://github.com/instagrambot/docs/blob/master/CONTRIBUTING.md) | [Buy Instagram Expert Marketing](https://www.fiverr.com/hourapp/grow-your-instagram-followers-for-7-days)
 ---
